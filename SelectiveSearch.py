@@ -54,19 +54,10 @@ class SelectiveSearch:
                 rect = tuple(region)
                 if rect in candidates:
                     continue
-                # if rect[2] * rect[3] < 500:
-                #     continue
-                #
-                # x1, y1, w, h = rect
-                # # 剔除异常区域
-                # if x1 < 0 or y1 < 0 or x1 >= cols or y1 >= rows:
-                #     continue
-                # x2, y2 = x1 + w, y1 + h
-                # if x2 < 0 or y2 < 0 or x2 >= cols or y2 >= rows:
-                #     continue
-                # if w == 0 or h == 0:
-                #     continue
                 # # 限制区域框形状和大小
+                # x1, y1, w, h = rect
+                # if w * h < 500:
+                #     continue
                 # if w / h > 2 or h / w > 2 or w / cols < 0.05 or h / rows < 0.05:
                 #     continue
                 candidates.add(rect)
@@ -79,20 +70,10 @@ class SelectiveSearch:
                 # excluding same rectangle with different segments
                 if region['rect'] in candidates:
                     continue
-                # # excluding small regions
-                # if region['size'] < 220 or region['rect'][2] * region['rect'][3] < 500:
-                #     continue
-                #
-                # x1, y1, w, h = region['rect']
-                # # 剔除异常区域
-                # if x1 < 0 or y1 < 0 or x1 >= cols or y1 >= rows:
-                #     continue
-                # x2, y2 = x1 + w, y1 + h
-                # if x2 < 0 or y2 < 0 or x2 >= cols or y2 >= rows:
-                #     continue
-                # if w == 0 or h == 0:
-                #     continue
                 # # 限制区域框形状和大小
+                # x1, y1, w, h = rect
+                # if w * h < 500:
+                #     continue
                 # if w / h > 2 or h / w > 2 or w / cols < 0.05 or h / rows < 0.05:
                 #     continue
                 candidates.add(region['rect'])
