@@ -1,6 +1,9 @@
 # RCNN
 Object detection using RCNN on the 17flowers dataset.
 
+# 博客
+算法原理及思路请参考本人博客：https://www.cnblogs.com/Haitangr/p/17690028.html
+
 # 数据集
 17flowers据集, 官网下载地址：http://www.robots.ox.ac.uk/~vgg/data/flowers/17/
 
